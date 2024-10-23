@@ -37,7 +37,7 @@ international_tickets=[
                 international_flights[0].get_number(),
                 international_flights[0].get_destination(),
                 international_flights[0].get_price(),
-                "International",
+                "Nemzetközi",
                 100100,
                 0),
             InternationalTicket(
@@ -45,7 +45,7 @@ international_tickets=[
                 international_flights[0].get_number(),
                 international_flights[0].get_destination(),
                 international_flights[0].get_price(),
-                "International",
+                "Nemzetközi",
                 100101,
                 0),
             InternationalTicket(
@@ -53,7 +53,7 @@ international_tickets=[
                 international_flights[0].get_number(),
                 international_flights[0].get_destination(),
                 international_flights[0].get_price(),
-                "International",
+                "Nemzetközi",
                 100102,
                 1),
             InternationalTicket(
@@ -61,7 +61,7 @@ international_tickets=[
                 international_flights[0].get_number(),
                 international_flights[0].get_destination(),
                 international_flights[0].get_price(),
-                "International",
+                "Nemzetközi",
                 100103,
                 1),
             InternationalTicket(
@@ -69,7 +69,7 @@ international_tickets=[
                 international_flights[0].get_number(),
                 international_flights[0].get_destination(),
                 international_flights[0].get_price(),
-                "International",
+                "Nemzetközi",
                 100104,
                 1),
             InternationalTicket(
@@ -77,7 +77,7 @@ international_tickets=[
                 international_flights[0].get_number(),
                 international_flights[0].get_destination(),
                 international_flights[0].get_price(),
-                "International",
+                "Nemzetközi",
                 100105,
                 1),
             InternationalTicket(
@@ -85,7 +85,7 @@ international_tickets=[
                 international_flights[0].get_number(),
                 international_flights[0].get_destination(),
                 international_flights[0].get_price(),
-                "International",
+                "Nemzetközi",
                 100106,
                 1),
             InternationalTicket(
@@ -93,7 +93,7 @@ international_tickets=[
                 international_flights[0].get_number(),
                 international_flights[0].get_destination(),
                 international_flights[0].get_price(),
-                "International",
+                "Nemzetközi",
                 100107,
                 1),
             InternationalTicket(
@@ -101,7 +101,7 @@ international_tickets=[
                 international_flights[0].get_number(),
                 international_flights[0].get_destination(),
                 international_flights[0].get_price(),
-                "International",
+                "Nemzetközi",
                 100108,
                 1),
             InternationalTicket(
@@ -109,7 +109,7 @@ international_tickets=[
                 international_flights[0].get_number(),
                 international_flights[0].get_destination(),
                 international_flights[0].get_price(),
-                "International",
+                "Nemzetközi",
                 100109,
                 1),
             InternationalTicket(
@@ -117,20 +117,17 @@ international_tickets=[
                 international_flights[0].get_number(),
                 international_flights[0].get_destination(),
                 international_flights[0].get_price(),
-                "International",
+                "Nemzetközi",
                 100110,
                 1)
             ]
-#Negatív foglalás teszteléséhez:
-# for j in range(len(international_tickets)):
-#     international_tickets[j].set_available(0)
 domestic_tickets= [
             DomesticTicket(
                 name,
                 domestic_flights[0].get_number(),
                 domestic_flights[0].get_destination(),
                 domestic_flights[0].get_price(),
-                "Domestic",
+                "Belföldi",
                 100,
                 0),
             DomesticTicket(
@@ -138,7 +135,7 @@ domestic_tickets= [
                 domestic_flights[0].get_number(),
                 domestic_flights[0].get_destination(),
                 domestic_flights[0].get_price(),
-                "Domestic",
+                "Belföldi",
                 101,
                 0),
             DomesticTicket(
@@ -146,7 +143,7 @@ domestic_tickets= [
                 domestic_flights[0].get_number(),
                 domestic_flights[0].get_destination(),
                 domestic_flights[0].get_price(),
-                "Domestic",
+                "Belföldi",
                 102,
                 1),
             DomesticTicket(
@@ -154,7 +151,7 @@ domestic_tickets= [
                 domestic_flights[0].get_number(),
                 domestic_flights[0].get_destination(),
                 domestic_flights[0].get_price(),
-                "Domestic",
+                "Belföldi",
                 103,
                 1),
             DomesticTicket(
@@ -162,7 +159,7 @@ domestic_tickets= [
                 domestic_flights[0].get_number(),
                 domestic_flights[0].get_destination(),
                 domestic_flights[0].get_price(),
-                "Domestic",
+                "Belföldi",
                 104,
                 1),
             DomesticTicket(
@@ -170,7 +167,7 @@ domestic_tickets= [
                 domestic_flights[1].get_number(),
                 domestic_flights[1].get_destination(),
                 domestic_flights[1].get_price(),
-                "Domestic",
+                "Belföldi",
                 112,
                 0),
             DomesticTicket(
@@ -178,7 +175,7 @@ domestic_tickets= [
                 domestic_flights[1].get_number(),
                 domestic_flights[1].get_destination(),
                 domestic_flights[1].get_price(),
-                "Domestic",
+                "Belföldi",
                 113,
                 0),
             DomesticTicket(
@@ -186,7 +183,7 @@ domestic_tickets= [
                 domestic_flights[1].get_number(),
                 domestic_flights[1].get_destination(),
                 domestic_flights[1].get_price(),
-                "Domestic",
+                "Belföldi",
                 114,
                 1),
             DomesticTicket(
@@ -194,7 +191,7 @@ domestic_tickets= [
                 domestic_flights[1].get_number(),
                 domestic_flights[1].get_destination(),
                 domestic_flights[1].get_price(),
-                "Domestic",
+                "Belföldi",
                 115,
                 1),
             DomesticTicket(
@@ -202,7 +199,7 @@ domestic_tickets= [
                 domestic_flights[1].get_number(),
                 domestic_flights[1].get_destination(),
                 domestic_flights[1].get_price(),
-                "Domestic",
+                "Belföldi",
                 116,
                 1),
             DomesticTicket(
@@ -210,7 +207,7 @@ domestic_tickets= [
                 domestic_flights[1].get_number(),
                 domestic_flights[1].get_destination(),
                 domestic_flights[1].get_price(),
-                "Domestic",
+                "Belföldi",
                 117,
                 1),
             DomesticTicket(
@@ -218,7 +215,7 @@ domestic_tickets= [
                 domestic_flights[1].get_number(),
                 domestic_flights[1].get_destination(),
                 domestic_flights[1].get_price(),
-                "Domestic",
+                "Belföldi",
                 118,
                 1),
             DomesticTicket(
@@ -226,7 +223,7 @@ domestic_tickets= [
                 domestic_flights[1].get_number(),
                 domestic_flights[1].get_destination(),
                 domestic_flights[1].get_price(),
-                "Domestic",
+                "Belföldi",
                 119,
                 1),
             DomesticTicket(
@@ -234,11 +231,16 @@ domestic_tickets= [
                 domestic_flights[1].get_number(),
                 domestic_flights[1].get_destination(),
                 domestic_flights[1].get_price(),
-                "Domestic",
+                "Belföldi",
                 120,
                 1)
         ]
 
+#Negatív foglalás teszteléséhez:
+# for j in range(len(international_tickets)):
+#      international_tickets[j].set_available(0)
+# for i in range(len(domestic_tickets)):
+#      domestic_tickets[i].set_available(0)
 def menu():
     print(f"Kérem válasszon az alábbi menüpontokból")
 
@@ -321,7 +323,7 @@ while tst != 1:
            # Dátum megadása
             chk = 0
             while chk != 1:
-                date = input(f"Kérem adja meg az indulás időpontját! (Elvárt formátum ÉÉÉÉ.HH.NN)\n")
+                date = input("Kérem adja meg az indulás időpontját! (Elvárt formátum ÉÉÉÉ.HH.NN)\n")
                 # dátum ellenőrzés
                 if date_validation(date):
                     chk = 1
@@ -329,83 +331,79 @@ while tst != 1:
             # A járatok kiírása
                     chk2 = 0
                     while chk2 != 1:
-                        print(f"Belföldi járatok:")
-
+                        print("Belföldi járatok:")
                         for i in range(len(domestic_flights)):
-                            print(f"Légitársaság:{domestic_flights[i].get_name()} "
-                                  f"Járatszám: {str(domestic_flights[i].get_number())} "
-                                  f"Célállomás: {domestic_flights[i].get_destination()} "
-                                  f"Ár: {str(domestic_flights[i].get_price())}€")
-                        print(f"\nNemzetközi járatok:")
+                            print(domestic_flights[i])
+                        print("\nNemzetközi járatok:")
 
                         for j in range(len(international_flights)):
-                            print(f"Légitársaság:{international_flights[j].get_name()} "
-                                  f"Járatszám: {str(international_flights[j].get_number())} "
-                                  f"Célállomás: {international_flights[j].get_destination()} "
-                                  f"Ár: {str(international_flights[j].get_price())}€\n")
+                            print(international_flights[j])
+
                         # A kiírt járatokból választás
 
                         flightnumber = ""
                         isflightnumber=0
                         isinteger = 0
-                        while isflightnumber !=1  and isinteger != 1:
-                            flightnumber = input(f"Kérem adja meg a kívánt járat számát: ")
+                        while isinteger != 1:
+                            flightnumber = input("Kérem adja meg a kívánt járat számát: ")
                             try:
                                 int(flightnumber)
                                 isinteger = 1
-
                             except ValueError:
-                                print(f"Nem szám került megadásra!")
+                                print("Nem szám került megadásra!")
                                 isinteger=0
-                        i = 0
-                        j = 0
+
                         x = 0
-                        y = 1
+                        y = 0
                         first_ticket_number=0
                         for i in range(len(domestic_flights)):
                             if flightnumber == str(domestic_flights[i].get_number()): x=1
                         for j in range(len(international_flights)):
                             if flightnumber == str(international_flights[j].get_number()): y=1
+
                         if x == 1:
                             for i in range(len(domestic_tickets)):
                                 if domestic_tickets[i].select_first_available_ticket(flightnumber) != -1:
                                    first_ticket_number=domestic_tickets[i].get_ticket_number()
                                    domestic_tickets[i].set_available(0)
                                    print(f"A foglalás sikeres!")
-                                   print(f"A foglalás adatai:"
-                                          f"Jegysorszám: {domestic_tickets[i].get_ticket_number()} "
-                                          f"Uticél: {domestic_tickets[i].get_destination()} "
-                                          f"Ár: {domestic_tickets[i].get_price()} €")
+                                   print(f"A foglalás adatai:")
+                                   print(domestic_tickets[i])
                                    chk2 = 1
                                    break
-                            if first_ticket_number==0:
+                            if first_ticket_number == 0:
                                 print(f"Nincs foglalható jegy a megadott járatra!")
                                 chk2 = 1
+
                         elif y==1:
                             for j in range(len(international_tickets)):
                                 if international_tickets[j].select_first_available_ticket(flightnumber)!=-1:
                                     first_ticket_number=international_tickets[j].get_ticket_number()
                                     international_tickets[j].set_available(0)
                                     print(f"A foglalás sikeres!")
-                                    print(f"A foglalás adatai:"
-                                          f" Jegysorszám: {international_tickets[j].get_ticket_number()} "
-                                          f" Uticél: {international_tickets[j].get_destination()} "
-                                          f" Ár: {international_tickets[j].get_price()} €")
+                                    print(f"A foglalás adatai:")
+                                    print(international_tickets[j])
                                     chk2 = 1
                                     break
                             if first_ticket_number==0:
-                                print(f"Nincs foglalható jegy a megadott járatra!")
-                                chk2 = 1
+                               print(f"Nincs foglalható jegy a megadott járatra!")
+                               chk2 = 1
+                        elif x==0 and y==0: print(f"Kérem a megadott listából válasszon!\n")
                         else:
-                              print(f"Kérem a megadott listából válasszon!\n")
+                            print("Nem ismert hiba miatt a program leáll.")
+                            sys.exit()
+
 
        case 2:  # Foglalások megtekintése
             count=0
             for i in range(len(domestic_tickets)):
-                count=count+domestic_tickets[i].print_booked_ticket()
-
+                if domestic_tickets[i].get_available()==0:
+                    print(domestic_tickets[i])
+                    count+=1
             for j in range(len(international_tickets)):
-                count=count+international_tickets[j].print_booked_ticket()
+                if international_tickets[j].get_available()==0:
+                    print(international_tickets[j])
+                    count+=1
             if count == 0:
                 print(f"Nincs jelenleg kilistázható foglalás!")
 
