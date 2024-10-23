@@ -1,8 +1,6 @@
 import datetime
-
 import sys
 from time import sleep
-
 from AirLine import AirLine
 from InternationalFlight import InternationalFlight
 from DomesticTicket import DomesticTicket
@@ -123,6 +121,9 @@ international_tickets=[
                 100110,
                 1)
             ]
+#Negatív foglalás teszteléséhez:
+# for j in range(len(international_tickets)):
+#     international_tickets[j].set_available(0)
 domestic_tickets= [
             DomesticTicket(
                 name,
@@ -147,7 +148,7 @@ domestic_tickets= [
                 domestic_flights[0].get_price(),
                 "Domestic",
                 102,
-                0),
+                1),
             DomesticTicket(
                 name,
                 domestic_flights[0].get_number(),
@@ -239,19 +240,29 @@ domestic_tickets= [
         ]
 
 def menu():
-    print("Kérem válasszon az alábbi menüpontokból\n")
+    print(f"Kérem válasszon az alábbi menüpontokból")
 
-    print("1 - Foglalás\n")
-    print("2 - Foglalások megtekintése\n")
-    print("3 - Foglalás törlése\n")
-    print("0 - Kilépés\n")
-    selection = input("Választás:")
+    print(f"1 - Foglalás")
+    print(f"2 - Foglalások megtekintése")
+    print(f"3 - Foglalás törlése")
+    print(f"0 - Kilépés")
+    isint=0
+    selection = input(f"Választás:")
+    while isint!=1:
+        try:
+            int(selection)
+            isint=1
+        except ValueError:
+            selection = input(f"A megadott érték nem megfelelő!\n"
+                              f"Választás:")
+            isint=0
+
     return selection
 
 def date_validation(_date):
     point1 = _date.find(".")
     point2 = _date.find(".", 5)
-
+    x=0
     if len(_date) != 10:
         print("Nem megfelelő a formátum!")
         x = 0
@@ -303,122 +314,140 @@ def date_validation(_date):
 
 tst=0
 while tst != 1:
-    try:
-        select = int(menu())
-        match select:
-           case 1:  # Foglalás
-               # Dátum megadása
-                chk = 0
-                while chk != 1:
-                    date = input("Kérem adja meg az indulás időpontját! (Elvárt formátum ÉÉÉÉ.HH.NN)\n")
-                    # dátum ellenőrzés
-                    if date_validation(date):
-                        chk = 1
 
-                # A járatok kiírása
-                        chk2 = 0
-                        while chk2 != 1:
-                            print("Belföldi járatok:")
+    select = int(menu())
+    match select:
+       case 1:  # Foglalás
+           # Dátum megadása
+            chk = 0
+            while chk != 1:
+                date = input(f"Kérem adja meg az indulás időpontját! (Elvárt formátum ÉÉÉÉ.HH.NN)\n")
+                # dátum ellenőrzés
+                if date_validation(date):
+                    chk = 1
 
-                            for i in range(len(domestic_flights)):
-                                print(f"Légitársaság:{domestic_flights[i].get_name()} "
-                                      f"Járatszám: {str(domestic_flights[i].get_number())} "
-                                      f"Célállomás: {domestic_flights[i].get_destination()} "
-                                      f"Ár: {str(domestic_flights[i].get_price())}€\n")
-                            print("Nemzetközi járatok:")
+            # A járatok kiírása
+                    chk2 = 0
+                    while chk2 != 1:
+                        print(f"Belföldi járatok:")
 
-                            for j in range(len(international_flights)):
-                                print(f"Légitársaság:{international_flights[j].get_name()} "
-                                      f"Járatszám: {str(international_flights[j].get_number())} "
-                                      f"Célállomás: {international_flights[j].get_destination()} "
-                                      f"Ár: {str(international_flights[j].get_price())}€\n")
-                            # A kiírt járatokból választás
-                            flightnumber = input("\nKérem adja meg a kívánt járat számát: ")
+                        for i in range(len(domestic_flights)):
+                            print(f"Légitársaság:{domestic_flights[i].get_name()} "
+                                  f"Járatszám: {str(domestic_flights[i].get_number())} "
+                                  f"Célállomás: {domestic_flights[i].get_destination()} "
+                                  f"Ár: {str(domestic_flights[i].get_price())}€")
+                        print(f"\nNemzetközi járatok:")
 
-                            i = 0
-                            j = 0
-                            x = 0
-                            first_ticket_number=0
-                            for i in range(len(domestic_flights)):
-                                if flightnumber == str(domestic_flights[i].get_number()): x=1
-                            for j in range(len(international_flights)):
+                        for j in range(len(international_flights)):
+                            print(f"Légitársaság:{international_flights[j].get_name()} "
+                                  f"Járatszám: {str(international_flights[j].get_number())} "
+                                  f"Célállomás: {international_flights[j].get_destination()} "
+                                  f"Ár: {str(international_flights[j].get_price())}€\n")
+                        # A kiírt járatokból választás
 
-                                if flightnumber == str(international_flights[j].get_number()): x=1
-                            if x == 1:
+                        flightnumber = ""
+                        isflightnumber=0
+                        isinteger = 0
+                        while isflightnumber !=1  and isinteger != 1:
+                            flightnumber = input(f"Kérem adja meg a kívánt járat számát: ")
+                            try:
+                                int(flightnumber)
+                                isinteger = 1
 
+                            except ValueError:
+                                print(f"Nem szám került megadásra!")
+                                isinteger=0
+                        i = 0
+                        j = 0
+                        x = 0
+                        y = 1
+                        first_ticket_number=0
+                        for i in range(len(domestic_flights)):
+                            if flightnumber == str(domestic_flights[i].get_number()): x=1
+                        for j in range(len(international_flights)):
+                            if flightnumber == str(international_flights[j].get_number()): y=1
+                        if x == 1:
+                            for i in range(len(domestic_tickets)):
                                 if domestic_tickets[i].select_first_available_ticket(flightnumber) != -1:
-                                    for i in range(len(domestic_tickets)):
-
-
-                                        first_ticket_number=domestic_tickets[i].get_ticket_number()
-                                        domestic_tickets[i].set_available(0)
-                                        print(f"A foglalás sikeres!")
-                                        print(f"A foglalás adatai:"
-                                              f"Jegysorszám: {domestic_tickets[i].get_ticket_number()}"
-                                              f"Uticél: {domestic_tickets[i].get_destination()}"
-                                              f"Ár: {domestic_tickets[i].get_price()}")
-                                        break
-                                else:
-                                    for j in range(len(international_tickets)):
-
-                                        if international_tickets[j].select_first_available_ticket(flightnumber)!=-1:
-                                            first_ticket_number=international_tickets[j].get_ticket_number()
-                                            international_tickets[j].set_available(0)
-                                            print(f"A foglalás sikeres!")
-                                            print(f"A foglalás adatai:"
-                                                  f" Jegysorszám: {international_tickets[j].get_ticket_number()}"
-                                                  f" Uticél: {international_tickets[j].get_destination()}"
-                                                  f" Ár: {international_tickets[j].get_price()}€")
-                                            break
-
-                                if first_ticket_number==0:
-                                    print(f"Nincs foglalható jegy a megadott járatra!")
+                                   first_ticket_number=domestic_tickets[i].get_ticket_number()
+                                   domestic_tickets[i].set_available(0)
+                                   print(f"A foglalás sikeres!")
+                                   print(f"A foglalás adatai:"
+                                          f"Jegysorszám: {domestic_tickets[i].get_ticket_number()} "
+                                          f"Uticél: {domestic_tickets[i].get_destination()} "
+                                          f"Ár: {domestic_tickets[i].get_price()} €")
+                                   chk2 = 1
+                                   break
+                            if first_ticket_number==0:
+                                print(f"Nincs foglalható jegy a megadott járatra!")
                                 chk2 = 1
-                            else:
-                                  print("Kérem a megadott listából válasszon!\n")
+                        elif y==1:
+                            for j in range(len(international_tickets)):
+                                if international_tickets[j].select_first_available_ticket(flightnumber)!=-1:
+                                    first_ticket_number=international_tickets[j].get_ticket_number()
+                                    international_tickets[j].set_available(0)
+                                    print(f"A foglalás sikeres!")
+                                    print(f"A foglalás adatai:"
+                                          f" Jegysorszám: {international_tickets[j].get_ticket_number()} "
+                                          f" Uticél: {international_tickets[j].get_destination()} "
+                                          f" Ár: {international_tickets[j].get_price()} €")
+                                    chk2 = 1
+                                    break
+                            if first_ticket_number==0:
+                                print(f"Nincs foglalható jegy a megadott járatra!")
+                                chk2 = 1
+                        else:
+                              print(f"Kérem a megadott listából válasszon!\n")
 
-           case 2:  # Foglalások megtekintése
-                count=0
-                for i in range(len(domestic_tickets)):
-                    count=count+domestic_tickets[i].print_booked_ticket()
+       case 2:  # Foglalások megtekintése
+            count=0
+            for i in range(len(domestic_tickets)):
+                count=count+domestic_tickets[i].print_booked_ticket()
 
-                for j in range(len(international_tickets)):
-                    count=count+international_tickets[j].print_booked_ticket()
-                if count == 0:
-                    print(f"Nincs jelenleg kilistázható foglalás!")
+            for j in range(len(international_tickets)):
+                count=count+international_tickets[j].print_booked_ticket()
+            if count == 0:
+                print(f"Nincs jelenleg kilistázható foglalás!")
 
-           case 3:  # Foglalás törlése
+       case 3:  # Foglalás törlése
 
-                beolvas2 = input("Kérem adja meg a jegyének a számát! \n")
-                tmp=0
-                for i in range(len(domestic_tickets)):
-                    if domestic_tickets[i].checking_ticketid(beolvas2):
-                        domestic_tickets[i].set_available(1)
-                        tmp=1
-                        print(f"A {domestic_tickets[i].ticket_number} számú jegyfoglalását töröltük!")
+            isinteger=0
+            beolvas2 = input(f"Kérem adja meg a jegyének a számát! \n")
+            while isinteger!=1:
+                try:
+                    int(beolvas2)
+                    isinteger=1
+                except ValueError:
+                    beolvas2 = input(f"A megadott érték hibás!\n"
+                                     f"Kérem adja meg a jegyének a számát! \n")
+                    isinteger=0
 
-                for j in range(len(international_tickets)):
+            tmp=0
+            for i in range(len(domestic_tickets)):
+                if domestic_tickets[i].checking_ticketid(beolvas2):
+                    domestic_tickets[i].set_available(1)
+                    tmp=1
+                    print(f"A {domestic_tickets[i].ticket_number} számú jegyfoglalását töröltük!")
 
-                    if international_tickets[j].checking_ticketid(beolvas2):
-                        international_tickets[j].set_available(1)
-                        tmp = 1
-                        print(f"A {international_tickets[j].ticket_number} számú jegyfoglalását töröltük!")
+            for j in range(len(international_tickets)):
 
-                if tmp != 1:
-                    print("Nincs ilyen számú jegyfoglalás!")
+                if international_tickets[j].checking_ticketid(beolvas2):
+                    international_tickets[j].set_available(1)
+                    tmp = 1
+                    print(f"A {international_tickets[j].ticket_number} számú jegyfoglalását töröltük!")
+
+            if tmp != 1:
+                print(f"Nincs ilyen számú jegyfoglalás!")
 
 
-           case 0:
-                 print("Legyen szép napod!\n")
-                 sleep(5)
-                 sys.exit()
-           case _:
-                 print("Hibás válasz, a program kilép!\n")
-                 sys.exit()
-
-    except ValueError:
-        "Kérem csak a megadott menüpontokból válasszon!"
-    sleep(5)
+       case 0:
+             print(f"Legyen szép napod!\n")
+             sleep(3)
+             sys.exit()
+       case _:
+             print(f"Hibás válasz, a program kilép!\n")
+             sys.exit()
+    sleep(3)
 
 
 sys.exit()

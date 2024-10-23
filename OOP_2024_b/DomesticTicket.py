@@ -73,6 +73,6 @@ class DomesticTicket(DomesticFlight):  # A járatok foglalásához szükséges o
 
     def select_first_available_ticket(self, flightnumber):
         if self.available == 1 and self.number == int(flightnumber):
-            return self.ticket_number
+                return self.ticket_number
         else: return -1
 

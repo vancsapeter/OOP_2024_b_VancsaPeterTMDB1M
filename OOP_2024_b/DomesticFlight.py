@@ -40,3 +40,5 @@ class DomesticFlight(Flight):  # Belföldi járatokra vonatkozó osztály, amely
     def set_price(self, price):
         self.price = price
         return self
+
+
