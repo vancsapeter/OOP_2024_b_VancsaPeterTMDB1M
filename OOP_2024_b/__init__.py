@@ -425,14 +425,14 @@ while tst != 1:
                 if domestic_tickets[i].checking_ticketid(beolvas2):
                     domestic_tickets[i].set_available(1)
                     tmp=1
-                    print(f"A {domestic_tickets[i].ticket_number} számú jegyfoglalását töröltük!")
+                    print(f"A {domestic_tickets[i].get_ticket_number()} számú jegyfoglalását töröltük!")
 
             for j in range(len(international_tickets)):
 
                 if international_tickets[j].checking_ticketid(beolvas2):
                     international_tickets[j].set_available(1)
                     tmp = 1
-                    print(f"A {international_tickets[j].ticket_number} számú jegyfoglalását töröltük!")
+                    print(f"A {international_tickets[j].get_ticket_number()} számú jegyfoglalását töröltük!")
 
             if tmp != 1:
                 print(f"Nincs ilyen számú jegyfoglalás!")
