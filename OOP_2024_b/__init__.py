@@ -21,7 +21,6 @@ international_flights=[
                 "New York",
                 600)
         ]
-
 domestic_flights=  [
         DomesticFlight(
                name,
@@ -34,10 +33,6 @@ domestic_flights=  [
                 "Pécs",
                 125)
         ]
-
-
-
-
 international_tickets=[
             InternationalTicket(
                 name,
@@ -243,8 +238,6 @@ domestic_tickets= [
                 1)
         ]
 
-
-
 def menu():
     print("Kérem válasszon az alábbi menüpontokból\n")
 
@@ -349,13 +342,13 @@ while tst != 1:
                             for i in range(len(domestic_flights)):
                                 if flightnumber == str(domestic_flights[i].get_number()): x=1
                             for j in range(len(international_flights)):
-                                # print(_flightnumber, str(_nf[j].get_number()))
+
                                 if flightnumber == str(international_flights[j].get_number()): x=1
                             if x == 1:
-                                #print(f"itt fogok jegyszámot hozzárendelni")
+
                                 if domestic_tickets[i].select_first_available_ticket(flightnumber) != -1:
                                     for i in range(len(domestic_tickets)):
-                                        #print(domestic_tickets[i].select_first_available_ticket(flightnumber))
+
 
                                         first_ticket_number=domestic_tickets[i].get_ticket_number()
                                         domestic_tickets[i].set_available(0)
@@ -367,8 +360,6 @@ while tst != 1:
                                         break
                                 else:
                                     for j in range(len(international_tickets)):
-                                        #print("nemzetközi")
-                                        #print(international_tickets[j].select_first_available_ticket(flightnumber))
 
                                         if international_tickets[j].select_first_available_ticket(flightnumber)!=-1:
                                             first_ticket_number=international_tickets[j].get_ticket_number()
@@ -382,25 +373,9 @@ while tst != 1:
 
                                 if first_ticket_number==0:
                                     print(f"Nincs foglalható jegy a megadott járatra!")
-
-
-
-
-
-
-                                # A választott járathoz jegyszám hozzárendelés
-                                #jegysorszam = l1.select_first_available_ticket(flightnumber, bf_jegyek, nf_jegyek)
-                                #print("\nA foglalás sikeres!\nAz ön jegyének a sorszáma: " + str(jegysorszam))
-                                #if len(str(jegysorszam)) != 8:
-                                #   bf_jegyek = l1.booking_ticket(jegysorszam, bf_jegyek)
-                                #elif len(str(jegysorszam)) == 8:
-                                #   nf_jegyek = l1.booking_ticket(jegysorszam, nf_jegyek)
                                 chk2 = 1
                             else:
                                   print("Kérem a megadott listából válasszon!\n")
-
-                        # Ellenőrizni kell, hogy van-e elérhető jegy
-
 
            case 2:  # Foglalások megtekintése
                 count=0
@@ -442,7 +417,7 @@ while tst != 1:
                  sys.exit()
 
     except ValueError:
-        "1Kérem csak a megadott menüpontokból válasszon!"
+        "Kérem csak a megadott menüpontokból válasszon!"
     sleep(5)
 
 
