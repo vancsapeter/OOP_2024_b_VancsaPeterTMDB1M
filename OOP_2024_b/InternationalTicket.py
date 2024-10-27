@@ -2,8 +2,9 @@ from InternationalFlight import InternationalFlight
 
 
 class InternationalTicket(InternationalFlight):  # A járatok foglalásához szükséges osztály, amely egy utazásra szóló jegy foglalását tárolja.
+
     def __init__(self, name, number, destination, price, tp, ticket_number, available):
-        super().__init__(name, number, destination, price, tp)
+        super().__init__(name, number, destination, price)
         self._available = available
         self._number = number
         self._ticket_number = ticket_number
@@ -19,9 +20,7 @@ class InternationalTicket(InternationalFlight):  # A járatok foglalásához sz�
                 f"Típus: {self._tp}, "
                 f"Jegysorszám: {self._ticket_number}, "
                 f"Foglaltság: {self._available}")
-    def set_price(self, price):
-        self._price = price
-        return self
+
 
     def set_ticket_number(self, ticket_number):
         self._ticket_number = ticket_number
@@ -30,13 +29,16 @@ class InternationalTicket(InternationalFlight):  # A járatok foglalásához sz�
     def set_available(self, available):
         self._available = available
         return self
-    def set_number(self, number):
-        self._number = number
-        return self
-
-    def set_destination(self, destination):
-        self._destination = destination
-        return self
+    # def set_number(self, number):
+    #     self._number = number
+    #     return self
+    #
+    # def set_destination(self, destination):
+    #     self._destination = destination
+    #     return self
+    # def set_price(self, price):
+    #     self._price = price
+    #     return self
     def set_tp(self, tp):
         self._tp = tp
         return self
@@ -47,14 +49,14 @@ class InternationalTicket(InternationalFlight):  # A járatok foglalásához sz�
 
     def get_available(self):
         return self._available
-    def get_price(self):
-        return self._price
-    def get_name(self):
-        return self._name
-    def get_destination(self):
-        return self._destination
-    def get_number(self):
-        return self._number
+    # def get_price(self):
+    #     return self._price
+    # def get_name(self):
+    #     return self._name
+    # def get_destination(self):
+    #     return self._destination
+    # def get_number(self):
+    #     return self._number
     def get_tp(self):
         return self._tp
 

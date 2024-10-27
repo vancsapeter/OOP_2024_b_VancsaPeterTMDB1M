@@ -267,31 +267,31 @@ def date_validation(_date):
     x=0
     if len(_date) != 10:
         print("Nem megfelelő a formátum!")
-        x = 0
+
     elif point1 != 4:
         print("Nem megfelelő a formátum!")
-        x = 0
+
     elif point2 != 7:
         print("Nem megfelelő a formátum!")
-        x = 0
+
     elif int(_date[5:7])>12 or int(_date[5:7])<1:
         print("Nem megfelelő a formátum!")
-        x = 0
+
     elif int(_date[5:7])<1:
         print("Nem megfelelő a formátum!")
-        x = 0
+
     elif int(_date[5:7])==2 and int(_date[8:10])>30:
         print("Hibás dátum!")
-        x = 0
+
     elif int(_date[0:4]) % 4==0 and int(_date[5:7]) == 2  and int(_date[8:10])>29:
         print("Hibás dátum!")
-        x = 0
+
     elif int(_date[0:4]) % 4>0 and int(_date[5:7]) == 2  and int(_date[8:10])>28:
         print("Hibás dátum!")
-        x = 0
+
     elif int(_date[5:7]) not in [1,3,5,7,8,10,12] and int(_date[8:10])>30:
         print("Hibás dátum!")
-        x = 0
+
     else:
 
         try:
@@ -300,18 +300,18 @@ def date_validation(_date):
 
             if int(_date[0:4]) < datetime.datetime.now().year:
                 print("Kérem jövőbeni dátumot adjon meg!")
-                x = 0
+
             elif int(_date[0:4]) == datetime.datetime.now().year and int(_date[5:7]) < datetime.datetime.now().month:
                 print("Kérlek jövőbeni dátumot adj meg!")
-                x = 0
+
             elif int(_date[5:7]) == datetime.datetime.now().month and int(_date[8:10]) < datetime.datetime.now().day:
                 print("Kérlek jövőbeni dátumot adj meg!")
-                x = 0
+
             else:
                 x = 1
         except ValueError:
             print("Nem megfelelő formátum!")
-            x = 0
+
     return x
 
 tst=0

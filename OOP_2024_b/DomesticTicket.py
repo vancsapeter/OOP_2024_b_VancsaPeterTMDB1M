@@ -19,10 +19,10 @@ class DomesticTicket(DomesticFlight):  # A járatok foglalásához szükséges o
                 f"Jegysorszám: {self._ticket_number}, "
                 f"Foglaltság: {self._available}")
 
-    def set_price(self, price):
-        self._price = price
-        return self
-
+    # def set_price(self, price):
+    #     self._price = price
+    #     return self
+    #
     def set_ticket_number(self, ticket_number):
         self._ticket_number = ticket_number
         return self
@@ -31,13 +31,13 @@ class DomesticTicket(DomesticFlight):  # A járatok foglalásához szükséges o
         self._available = available
         return self
 
-    def set_number(self, number):
-        self._number = number
-        return self
-
-    def set_destination(self, destination):
-        self._destination = destination
-        return self
+    # def set_number(self, number):
+    #     self._number = number
+    #     return self
+    #
+    # def set_destination(self, destination):
+    #     self._destination = destination
+    #     return self
 
     def set_tp(self, tp):
         self._tp = tp
@@ -49,17 +49,17 @@ class DomesticTicket(DomesticFlight):  # A járatok foglalásához szükséges o
     def get_available(self):
         return self._available
 
-    def get_price(self):
-        return self._price
-
-    def get_name(self):
-        return self._name
-
-    def get_destination(self):
-        return self._destination
-
-    def get_number(self):
-        return self._number
+    # def get_price(self):
+    #     return self._price
+    #
+    # def get_name(self):
+    #     return self._name
+    #
+    # def get_destination(self):
+    #     return self._destination
+    #
+    # def get_number(self):
+    #     return self._number
 
     def get_tp(self):
         return self._tp
